@@ -2,9 +2,13 @@ html {
   font-family: $font-base;
   font-weight: $font-weight-base;
   font-size: $font-size-base;
-  color: $font-color-base;
+  color: $font-color-light;
 
   background-color: $bg-color-base;
+
+  @media #{$tablet} {
+    font-size: $font-size-base-tab;
+  }
 }
 
 .container {

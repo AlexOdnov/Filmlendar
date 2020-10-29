@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
+    <title>Filmlendar</title>
     <link rel="shortcut icon" href="./img/favicons/favicon.ico" />
     <link
       rel="icon"
@@ -25,24 +25,12 @@
       href="./img/favicons/favicon-48x48.png"
     />
     <link rel="stylesheet" href="./css/style.min.css" />
-    <!-- webp tester -->
-    <script>
-      var i = new Image();
-      i.onload = i.onerror = function () {
-        document.body.classList.add(i.height == 1 ? 'webp' : 'no-webp');
-      };
-      i.src =
-        'data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==';
-    </script>
-    <!-- end webp tester -->
   </head>
 
   <body>
-    @@include("./_header.html")
     <main>
       <!-- Use this file for include HTML components. For example @@include("./_example.html").  -->
     </main>
-    @@include("./_footer.html")
     <script src="./js/index.js"></script>
   </body>
 </html>

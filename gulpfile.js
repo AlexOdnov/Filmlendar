@@ -107,14 +107,7 @@ const css = () => {
       )
     )
     .pipe(replace(/\.\.\/\.\.\//g, '../'))
-    .pipe(
-      postcss([
-        postcssWebp(),
-        postcssAutoprefixer(),
-        postcssCsso(),
-        postcssMQpack(),
-      ])
-    )
+    .pipe(postcss([postcssAutoprefixer(), postcssCsso(), postcssMQpack()]))
     .pipe(
       rename({
         suffix: '.min',
@@ -231,7 +224,6 @@ const js = () => {
                 loader: 'babel-loader',
                 options: {
                   presets: ['@babel/preset-env'],
-                  plugins: ['@babel/plugin-proposal-class-properties'],
                 },
               },
             },
@@ -263,7 +255,6 @@ const jsBuild = () => {
                 loader: 'babel-loader',
                 options: {
                   presets: ['@babel/preset-env'],
-                  plugins: ['@babel/plugin-proposal-class-properties'],
                 },
               },
             },
