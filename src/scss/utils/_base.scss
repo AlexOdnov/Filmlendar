@@ -4,8 +4,6 @@ html {
   font-size: $font-size-base;
   color: $font-color-light;
 
-  background-color: $bg-color-base;
-
   @media #{$tablet} {
     font-size: $font-size-base-tab;
   }

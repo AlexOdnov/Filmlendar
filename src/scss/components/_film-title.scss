@@ -1,0 +1,41 @@
+.film-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 62px;
+  padding: 0 0.5em;
+
+  background: $bg-color-dark;
+
+  @media #{$laptop} {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 2%,
+      #000 98%,
+      transparent 100%
+    );
+  }
+
+  //.film-title__title
+  &__title {
+    text-decoration: none;
+
+    transition: all 0.3s ease 0s;
+
+    &:hover,
+    &:focus {
+      opacity: 0.6;
+    }
+  }
+
+  //.film-title__score
+  &__score {
+  }
+
+  &--active {
+    @media #{$laptop} {
+      mask-image: initial;
+    }
+  }
+}

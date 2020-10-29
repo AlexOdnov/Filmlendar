@@ -1,0 +1,145 @@
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: 100%;
+  max-width: 434px;
+
+  box-shadow: 0 0 0 0.5px $border-color;
+
+  //.calendar__days
+  &__days {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  //.calendar__cell
+  &__cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 14.2vw;
+    min-height: 14.2vw;
+
+    background: $bg-color-dark;
+    border: 0.5px solid $border-color;
+
+    transition: all 0.3s ease 0s;
+
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background: #4a4a4a;
+    }
+
+    @media #{$tablet} {
+      min-width: 62px;
+      min-height: 62px;
+    }
+
+    //.calendar__cell--inactive
+    &--inactive {
+      color: rgba($font-color-light, 0.6);
+    }
+
+    //.calendar__cell--active
+    &--active {
+      background: #5a5a5a;
+    }
+
+    //.calendar__cell--day
+    &--day {
+      cursor: initial;
+
+      &:hover,
+      &:focus {
+        background: $bg-color-dark;
+      }
+    }
+
+    //.calendar__cell--month
+    &--month {
+      grid-column: 2 / -2;
+
+      cursor: initial;
+
+      &:hover,
+      &:focus {
+        background: $bg-color-dark;
+      }
+    }
+
+    //.calendar__cell--prev-month,
+    //.calendar__cell--next-month
+    &--prev-month,
+    &--next-month {
+      position: relative;
+
+      /* stylelint-disable */
+      $arrow-width: 75%;
+      /* stylelint-enable */
+
+      &::before,
+      &::after {
+        content: '';
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        display: block;
+        width: $arrow-width / 1.41;
+        height: $arrow-width * 0.075;
+
+        background-color: currentColor;
+        border-radius: 5px;
+      }
+    }
+
+    //.calendar__cell--prev-month
+    &--prev-month {
+      $arrow-width: 75%;
+
+      &::before {
+        transform: translateX(-60%) translateY(-350%) rotate(135deg);
+      }
+
+      &::after {
+        transform: translateX(-60%) translateY(250%) rotate(-135deg);
+      }
+    }
+
+    //.calendar__cell--next-month
+    &--next-month {
+      $arrow-width: 75%;
+
+      &::before {
+        transform: translateX(-40%) translateY(-350%) rotate(45deg);
+      }
+
+      &::after {
+        transform: translateX(-40%) translateY(250%) rotate(-45deg);
+      }
+    }
+  }
+
+  //.calendar__grid
+  &__grid {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: 2 / -2;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  //.calendar__month
+  &__month {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: -1 / -2;
+    grid-template-columns: repeat(7, 1fr);
+  }
+}

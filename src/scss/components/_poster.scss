@@ -1,0 +1,25 @@
+.poster {
+  position: relative;
+
+  cursor: pointer;
+
+  @media #{$laptop} {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(#000, 0.5) 5%,
+      #000 15%,
+      #000 85%,
+      rgba(#000, 0.5) 95%,
+      transparent 100%
+    );
+  }
+
+  &--active {
+    z-index: 5;
+
+    @media #{$laptop} {
+      mask-image: initial;
+    }
+  }
+}
