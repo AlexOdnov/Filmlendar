@@ -10,8 +10,14 @@ import {
 const DAYS_IN_GRID = 42;
 
 export class Calendar {
-  constructor(calendarSelector = '.calendar') {
-    this.calendar = document.querySelector(calendarSelector);
+  constructor(settings = {}) {
+    this.settings = Object.assign(
+      {
+        calendarSelector: '.calendar',
+      },
+      settings
+    );
+    this.calendar = document.querySelector(this.settings.calendarSelector);
     this.calendarGridWrapper = this.calendar.querySelector(
       '.calendar__grid-wrapper'
     );

@@ -3,3 +3,4 @@ build
 debug.log
 .vscode
 *.txt
+api_key.js

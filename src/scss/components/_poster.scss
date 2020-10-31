@@ -1,6 +1,8 @@
 .poster {
   position: relative;
 
+  transition: all 0.5s ease 0s;
+
   cursor: pointer;
 
   @media #{$laptop} {
@@ -13,13 +15,5 @@
       rgba(#000, 0.5) 95%,
       transparent 100%
     );
-  }
-
-  &--active {
-    z-index: 5;
-
-    @media #{$laptop} {
-      mask-image: initial;
-    }
   }
 }

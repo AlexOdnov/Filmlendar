@@ -9,6 +9,14 @@ html {
   }
 }
 
+main {
+  position: relative;
+
+  background: #000;
+
+  transition: all 0.5s ease 0s;
+}
+
 .container {
   max-width: $container-width;
   margin: 0 auto;

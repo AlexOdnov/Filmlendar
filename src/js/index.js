@@ -1,5 +1,9 @@
 import { mobileFix } from './mobileFix';
-import { Calendar } from './Calendar';
+import { Film } from './Film';
+import { Filmlendar } from './Filmlendar';
 
 mobileFix();
-const calendar = new Calendar();
+const film = new Film();
+const filmlendar = new Filmlendar({
+  cb: film.update,
+});

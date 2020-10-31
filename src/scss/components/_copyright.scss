@@ -1,0 +1,48 @@
+.copyright {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  padding: 0.5em;
+
+  font-size: 16px;
+  color: $font-color-light;
+
+  opacity: 0;
+
+  @media #{$desktop} {
+    opacity: 1;
+  }
+
+  //.copyright__author
+  &__author {
+    text-decoration: none;
+
+    opacity: 0.5;
+
+    transition: all 0.3s ease 0s;
+
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+  }
+
+  //.copyright__tmdb
+  &__tmdb {
+    text-decoration: none;
+
+    opacity: 0.5;
+
+    transition: all 0.3s ease 0s;
+
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+  }
+
+  &--visible {
+    opacity: 1;
+  }
+}

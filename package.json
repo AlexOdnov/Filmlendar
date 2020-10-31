@@ -59,5 +59,7 @@
     "webpack": "^4.44.1",
     "webpack-stream": "^5.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "fast-average-color": "^6.2.0"
+  }
 }
